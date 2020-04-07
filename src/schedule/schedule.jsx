@@ -39,12 +39,6 @@ export default class schedule extends Component {
                 {
                     day: "Wednesday",
                     subject: [
-                        {
-                            name: "JAVA",
-                            class: "17_22",
-                            start: 7,
-                            end: 9
-                        }
                     ]
                 },
                 {
@@ -102,6 +96,9 @@ export default class schedule extends Component {
        let result=null;
 
        result=list.map((item,index)=>{
+           if (item.subject.length===0){
+               return <div className="col"></div>
+           }
            return (
                <ScheduleItem key={index} item={item} id={index}/>
            )
